@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/serchEditLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10"
+        android:background="@color/edit_txt_background"
+        android:gravity="start"
+        app:cardCornerRadius="@dimen/margin20"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin40"
+                android:textSize="14sp"
+                android:layout_marginStart="@dimen/margin8"
+                android:background="@null"
+                android:fontFamily="@font/montserratregular"
+                android:hint="Search for Subjects &amp; Chapters"
+                android:inputType="textCapCharacters"
+                android:textColorHint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/search_ic"
+                android:layout_width="@dimen/margin18"
+                android:layout_height="@dimen/margin18"
+                android:layout_margin="@dimen/margin10"
+                android:layout_toLeftOf="@+id/view1"
+                android:background="@drawable/search_grey"></ImageView>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="@dimen/margin3"
+                android:layout_height="@dimen/margin40"
+                android:background="@color/lightgrey"
+                android:layout_toLeftOf="@+id/filter"></View>
+
+            <ImageView
+                android:id="@+id/filter"
+                android:layout_width="@dimen/margin22"
+                android:layout_height="@dimen/margin22"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin5"
+                android:background="@drawable/filter"></ImageView>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin5"
+        android:layout_marginTop="@dimen/margin10"
+        android:background="@color/lightgrey"
+        app:layout_constraintTop_toBottomOf="@+id/serchEditLayout"></View>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginRight="@dimen/margin10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"></androidx.viewpager.widget.ViewPager>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/subjects_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginRight="@dimen/margin10"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/viewpager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/test_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin300"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginRight="@dimen/margin10"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjects_recycler"></androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/AppBottomSheetDialogTheme"
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin20"
+        android:background="@drawable/card_layout">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:id="@+id/favsubtext"
+    android:text="@string/fav_subjext_txt"
+    android:fontFamily="@font/montserratregular"
+    android:textSize="20sp"
+    android:textColor="@color/skyblue"
+    android:textStyle="bold"
+    android:gravity="center_horizontal"
+    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin15"
+            app:layout_constraintTop_toBottomOf="@+id/favsubtext"
+            android:id="@+id/recyclerview">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:layout_width="@dimen/margin200"
+            android:layout_height="wrap_content"
+            android:id="@+id/save"
+            android:text="@string/save_btntxt"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserratregular"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin15"
+            android:layout_marginBottom="@dimen/margin15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerview"
+            android:background="@drawable/button_bg">
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

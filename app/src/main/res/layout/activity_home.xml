@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.HomeActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bubbleTabBar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.fxn.BubbleTabBar
+        android:id="@+id/bubbleTabBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navyblue"
+        android:elevation="@dimen/margin16"
+        android:padding="@dimen/margin7"
+        app:bubbletab_custom_font="@font/montserratregular"
+        app:bubbletab_disabled_icon_color="@color/white"
+        app:bubbletab_horizontal_padding="@dimen/margin20"
+        app:bubbletab_icon_padding="5sp"
+        app:bubbletab_icon_size="@dimen/margin20"
+        app:bubbletab_menuResource="@menu/menu_list"
+        app:bubbletab_title_size="16sp"
+        app:bubbletab_vertical_padding="@dimen/margin10"
+        app:layout_constraintBottom_toBottomOf="parent"></com.fxn.BubbleTabBar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
