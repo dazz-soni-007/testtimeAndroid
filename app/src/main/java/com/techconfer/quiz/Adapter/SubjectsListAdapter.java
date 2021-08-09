@@ -1,6 +1,7 @@
 package com.techconfer.quiz.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techconfer.quiz.Activities.Chapters_Activity;
 import com.techconfer.quiz.R;
 
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class SubjectsListAdapter extends RecyclerView.Adapter<SubjectsListAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        if(clickedPosition == position) {
+      /*  if(clickedPosition == position) {
             holder.subjectlayout.setBackgroundResource(R.drawable.gradient_bg);
             holder.name.setTextColor(Color.WHITE);
             holder.image.setColorFilter(holder.image.getContext().getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
@@ -54,7 +56,7 @@ public class SubjectsListAdapter extends RecyclerView.Adapter<SubjectsListAdapte
             holder.name.setTextColor(context.getResources().getColor(R.color.navyblue));
             holder.image.setColorFilter(holder.image.getContext().getResources().getColor(R.color.navyblue), PorterDuff.Mode.SRC_ATOP);
 
-        }
+        }*/
 
         // set the data in items
         holder.name.setText((CharSequence) personNames.get(position));
@@ -62,17 +64,21 @@ public class SubjectsListAdapter extends RecyclerView.Adapter<SubjectsListAdapte
         // implement setOnClickListener event on item view.
         holder.subjectlayout.setOnClickListener(v -> {
 
-            if(clickedPosition==position){
+          /*  if(clickedPosition==position){
                 clickedPosition=-1;
                 notifyDataSetChanged();
                 return;
             }
             clickedPosition = position;
-            notifyDataSetChanged();
+            notifyDataSetChanged();*/
 
           /*  holder.subjectlayout.setBackgroundResource(R.drawable.gradient_bg);
             holder.name.setTextColor(Color.WHITE);
             holder.image.setColorFilter(holder.image.getContext().getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);*/
+
+          Intent i=new Intent(context,Chapters_Activity.class);
+          i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+          context.startActivity(i);
 
         });
 
