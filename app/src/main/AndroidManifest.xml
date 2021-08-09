@@ -19,16 +19,14 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".Activities.Chapters_Activity">
-        </activity>
-        <activity android:name=".Activities.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Activities.Chapters_Activity"></activity>
+        <activity android:name=".Activities.TestActivity">
 
         </activity>
         <activity android:name=".Activities.HomeActivity" />
@@ -48,6 +46,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
