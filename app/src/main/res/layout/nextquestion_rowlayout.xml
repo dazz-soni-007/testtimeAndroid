@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ques_layout">
+
+    <Button
+        android:id="@+id/optionbtn"
+        android:layout_width="@dimen/margin25"
+        android:layout_height="@dimen/margin25"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin8"
+        android:fontFamily="@font/montserratbold"
+        android:background="@drawable/active_dot"
+        android:textColor="@color/white"
+        android:text="45"
+        android:textSize="16sp" />
+
+</RelativeLayout>

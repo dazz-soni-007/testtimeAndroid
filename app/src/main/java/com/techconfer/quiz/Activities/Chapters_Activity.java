@@ -3,8 +3,10 @@ package com.techconfer.quiz.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.techconfer.quiz.Adapter.Chapters_FragAdapter;
 import com.techconfer.quiz.Fragments.Chapters_Fragment;
@@ -13,6 +15,7 @@ import com.techconfer.quiz.R;
 public class Chapters_Activity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout mTabLayout;
+    CollapsingToolbarLayout collapsingToolbarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,10 @@ public class Chapters_Activity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         mTabLayout = findViewById(R.id.tabs);
 
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        collapsingToolbarLayout.setTitle("Physics");
+        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.white));
+     //   collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(R.color.navyblue));
 
         // setOffscreenPageLimit means number
         // of tabs to be shown in one page

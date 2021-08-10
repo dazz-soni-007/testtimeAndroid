@@ -1,15 +1,19 @@
 package com.techconfer.quiz.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.techconfer.quiz.Activities.Chapters_Activity;
+import com.techconfer.quiz.Activities.TestActivity;
 import com.techconfer.quiz.R;
 
 import java.util.ArrayList;
@@ -39,7 +43,12 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.MyView
         holder.name.setText((CharSequence) personNames.get(position));
       //  holder.image.setImageResource((Integer) personImages.get(position));
         // implement setOnClickListener event on item view.
+        holder.mainlay.setOnClickListener(v -> {
 
+            Intent i=new Intent(context, TestActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
+        });
 
     }
 
@@ -53,13 +62,14 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.MyView
         // init the item view's
         TextView name;
         ImageView image;
-        ConstraintLayout mainlay;
+        RelativeLayout mainlay;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             // get the reference of item view's
             name = (TextView) itemView.findViewById(R.id.testname);
             image = (ImageView) itemView.findViewById(R.id.testimg);
+            mainlay=(RelativeLayout)itemView.findViewById(R.id.mainlayout);
         }
     }
 }

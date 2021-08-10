@@ -21,7 +21,8 @@ import java.util.Arrays;
 
 public class Chapters_Fragment extends Fragment {
     RecyclerView topics_recycler;
-    ArrayList subjectslist = new ArrayList<>(Arrays.asList("Topic 1","Topic 2","Topic 3","Topic 4","Topic 5","Topic 6","Topic 7","Topic 8","Topic 9","Topic 10"));
+    ArrayList subjectslist = new ArrayList<>(Arrays.asList("Introduction to Electric Charges and Fields",
+            "Electric Charge","Conductors and Insulators","Charging by Induction","Basic Properties of Electric Charge","Coulomb’s Law","Forces between Multiple Charges","Electric Field"," Electric Field Lines","Electric Flux"));
     ArrayList imageslist = new ArrayList<>(Arrays.asList(R.drawable.physics,R.drawable.chemistry,R.drawable.bio,R.drawable.geography,R.drawable.contentpage,R.drawable.english));
 
     public static Chapters_Fragment newInstance() {
