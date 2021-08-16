@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techconfer.quiz.Activities.Chapters_Activity;
+import com.techconfer.quiz.Activities.RulesRegulationActivity;
 import com.techconfer.quiz.Activities.TestActivity;
 import com.techconfer.quiz.R;
 
@@ -45,7 +46,7 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.MyView
         // implement setOnClickListener event on item view.
         holder.mainlay.setOnClickListener(v -> {
 
-            Intent i=new Intent(context, TestActivity.class);
+            Intent i=new Intent(context, RulesRegulationActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(i);
         });

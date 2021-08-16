@@ -92,13 +92,11 @@
         android:text="@string/sendotptxt"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/ripple_effect"
         android:textSize="14sp"
         android:fontFamily="@font/montserratregular"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/phoneNoeditText"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNoeditText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNoeditText" />
 
     <EditText
         android:id="@+id/otpeditText"
@@ -163,8 +161,9 @@
         android:layout_marginTop="@dimen/margin10"
         android:text="@string/logintxt"
         android:textAllCaps="false"
+        app:backgroundTint="@null"
         android:textColor="@color/white"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/ripple_effect"
         android:textSize="15sp"
         android:fontFamily="@font/montserratregular"
         app:layout_constraintStart_toStartOf="parent"

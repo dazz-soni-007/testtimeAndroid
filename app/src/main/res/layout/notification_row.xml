@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardElevation="@dimen/margin5">
+
+        <RelativeLayout
+            android:id="@+id/mainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/margin10">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/margin60"
+                android:layout_height="@dimen/margin60"
+                android:elevation="@dimen/margin20"
+                android:src="@drawable/profilepics"
+                app:civ_border_color="@color/civ_bordercolor"
+                app:civ_border_width="@dimen/margin1"/>
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/margin5"
+                android:layout_marginStart="@dimen/margin5"
+                android:layout_toRightOf="@+id/profile_image"
+                android:fontFamily="@font/montserratbold"
+                android:text="George"
+                android:textColor="@color/navyblue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/sub_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin2"
+                android:layout_marginStart="@dimen/margin5"
+                android:layout_below="@+id/heading"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toLeftOf="@+id/date"
+                android:fontFamily="@font/montserratregular"
+                android:text="your test score is 80.find out more about your test."
+                android:textColor="@color/navyblue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="@dimen/margin5"
+                android:fontFamily="@font/montserratbold"
+                android:text="13 July"
+                android:textColor="@color/navyblue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/margin18"
+                android:layout_height="@dimen/margin18"
+                android:layout_below="@+id/date"
+                android:layout_toRightOf="@+id/sub_heading"
+                android:layout_marginLeft="@dimen/margin15"
+                android:text="2"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserratregular"
+               android:layout_marginTop="@dimen/margin3"
+                android:background="@drawable/active_dot" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

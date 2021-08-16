@@ -9,7 +9,7 @@
         android:layout_width="@dimen/margin25"
         android:layout_height="@dimen/margin25"
         android:gravity="center"
-        android:layout_margin="@dimen/margin8"
+        android:layout_margin="@dimen/margin5"
         android:fontFamily="@font/montserratbold"
         android:background="@drawable/active_dot"
         android:textColor="@color/white"

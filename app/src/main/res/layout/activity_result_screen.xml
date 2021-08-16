@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ResultScreen">
+
+    <include
+        android:id="@+id/toolbrlay"
+        layout="@layout/toolbar_layout"></include>
+
+    <LinearLayout
+        android:id="@+id/linearlay"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/toolbrlay"
+        android:background="@color/navyblue"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/chapterlay"
+            android:layout_width="250dp"
+            android:layout_height="@dimen/margin40"
+            android:layout_marginTop="@dimen/margin20"
+            android:background="@drawable/white_button"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:text="Chapter -"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:text="Motion"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"></TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chapterlay"
+            android:layout_marginTop="@dimen/margin20"
+            android:fontFamily="@font/montserratregular"
+            android:text="You're Excellent Samantha!!"
+            android:textColor="@color/white"
+            android:textSize="20sp"></TextView>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/margin10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/correctanslay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin40"
+        android:layout_below="@+id/linearlay"
+        android:layout_margin="@dimen/margin20"
+        android:background="@drawable/edit_box"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserratbold"
+            android:gravity="center"
+            android:text="Correct Answer"
+            android:textColor="@color/navyblue"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserratbold"
+            android:text="21 (85%)"
+            android:textColor="@color/navyblue"
+            android:textSize="18sp"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wronganswerlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin40"
+        android:layout_below="@+id/correctanslay"
+        android:layout_marginLeft="@dimen/margin20"
+        android:layout_marginRight="@dimen/margin20"
+        android:background="@drawable/edit_box"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserratbold"
+            android:gravity="center"
+            android:text="Wrong Answer"
+            android:textColor="@color/navyblue"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserratbold"
+            android:text="05 (25%)"
+            android:textColor="@color/navyblue"
+            android:textSize="18sp"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/skippedanslay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin40"
+        android:layout_below="@+id/wronganswerlay"
+        android:layout_margin="@dimen/margin20"
+        android:background="@drawable/edit_box"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserratbold"
+            android:gravity="center"
+            android:text="Skipped Answer"
+            android:textColor="@color/navyblue"
+            android:textSize="18sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserratbold"
+            android:text="02 (15%)"
+            android:textColor="@color/navyblue"
+            android:textSize="18sp"></TextView>
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/groupradio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/skippedanslay"
+        android:layout_margin="@dimen/margin20"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- In RadioGroup create the 1 Radio Button-->
+        <!-- like this we will add some more Radio Button-->
+        <RadioButton
+            android:id="@+id/radia_id1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10"
+            android:layout_weight="1"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="center_horizontal"
+            android:padding="15sp"
+            android:text="Answer Sheet"
+            android:textColor="@color/radio_flat_text_selector"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radia_id2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10"
+            android:layout_weight="1"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="center_horizontal"
+            android:padding="15sp"
+            android:text="Back To Home"
+            android:textColor="@color/radio_flat_text_selector"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+
+</RelativeLayout>

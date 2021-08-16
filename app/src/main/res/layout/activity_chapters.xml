@@ -53,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
+            android:background="@color/navyblue"
             app:tabIndicatorColor="@android:color/white"
             app:tabIndicatorHeight="4dp"
             app:tabMode="scrollable"

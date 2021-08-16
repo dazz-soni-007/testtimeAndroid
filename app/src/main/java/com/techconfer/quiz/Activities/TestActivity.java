@@ -1,12 +1,17 @@
 package com.techconfer.quiz.Activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.dhruv.timerbutton.TimerButton;
 import com.techconfer.quiz.Adapter.NextQuesAdapter;
 import com.techconfer.quiz.Adapter.OptionsAdapter;
 import com.techconfer.quiz.Adapter.SubjectsListAdapter;
@@ -23,6 +28,7 @@ public class TestActivity extends AppCompatActivity {
     RecyclerView options_recview, nextque_recyview;
     //ArrayList counting=new ArrayList<>(Arrays.asList("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"));
     ArrayList<Integer> counting = new ArrayList<Integer>(30);
+    ImageView back;
 
     List<OnSelected> onSelectedArrayList;
 
@@ -30,8 +36,23 @@ public class TestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
         options_recview = findViewById(R.id.options_recyclerview);
         nextque_recyview = findViewById(R.id.next_ques_recylerview);
+        TimerButton timerButton = findViewById(R.id.timer_button);
+
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("English test");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        timerButton.setDuration(10000L);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
        /* onSelectedArrayList.clear();
         OnSelected onSelected=new OnSelected();
@@ -47,7 +68,10 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public void onClick(int positionOfItem) {
 
-                if(onSelectedArrayList.get(positionOfItem).isSelected==true){
+
+              //  Toast.makeText(TestActivity.this, "clicked", Toast.LENGTH_SHORT).show();
+
+                /*if(onSelectedArrayList.get(positionOfItem).isSelected==true){
 
                     onSelectedArrayList.get(positionOfItem).isSelected();
 
@@ -56,7 +80,7 @@ public class TestActivity extends AppCompatActivity {
                     Object o=new Object();
                     onSelectedArrayList.remove(o);
 
-                }
+                }*/
 
             }
         });

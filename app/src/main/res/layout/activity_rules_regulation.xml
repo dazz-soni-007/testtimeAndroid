@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bg"
+    tools:context=".Activities.RulesRegulationActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="@dimen/margin10"
+        android:layout_marginBottom="@dimen/margin60"
+        app:cardCornerRadius="@dimen/margin20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/subjlay"
+                android:layout_width="250dp"
+                android:layout_height="@dimen/margin40"
+                android:background="@drawable/button_bg"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin40">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratbold"
+                    android:textSize="18sp"
+                    android:text="Subject -"
+                    android:textColor="@color/white"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratbold"
+                    android:textSize="18sp"
+                    android:text="Physics"
+                    android:textColor="@color/white"></TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rulestxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:textSize="18sp"
+                android:layout_marginTop="@dimen/margin30"
+                app:layout_constraintTop_toBottomOf="@+id/subjlay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Rules &amp; Regulations: "
+                android:textColor="@color/navyblue"></TextView>
+
+            <View
+                android:id="@+id/viewline"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin1"
+                android:layout_margin="@dimen/margin5"
+                app:layout_constraintTop_toBottomOf="@+id/rulestxt"
+                android:background="@color/grey"></View>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ruleslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/viewline"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_margin="@dimen/margin5"></androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/agree"
+                android:layout_width="@dimen/margin200"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ruleslist"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin10"
+                android:text="Agree"
+                android:fontFamily="@font/montserratbold"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:background="@drawable/ripple_effect"></Button>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

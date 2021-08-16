@@ -14,18 +14,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Profile extends AppCompatActivity implements  AdapterView.OnItemSelectedListener, View.OnClickListener{
-    Spinner gender,classname,language,district;
+    Spinner gender,classname,language,school,district;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         gender=findViewById(R.id.gender);
+        school=findViewById(R.id.schoolname);
+        district=findViewById(R.id.district);
         classname=findViewById(R.id.classname);
         language=findViewById(R.id.language);
 
         gender.setOnItemSelectedListener(this);
         classname.setOnItemSelectedListener(this);
         language.setOnItemSelectedListener(this);
+
+        school.setOnItemSelectedListener(this);
+        district.setOnItemSelectedListener(this);
 
         List<String> langlist = new ArrayList<String>();
         langlist.add("Language");
@@ -53,6 +58,30 @@ public class Profile extends AppCompatActivity implements  AdapterView.OnItemSel
         classes.add("Eleven");
         classes.add("Twelve");
 
+        List<String> districtlist = new ArrayList<String>();
+        districtlist.add("District");
+        districtlist.add("Bhiwani");
+        districtlist.add("Dadri");
+        districtlist.add("Hisar");
+        districtlist.add("Faridabad");
+        districtlist.add("Jhajjar");
+        districtlist.add("Sonipat");
+        districtlist.add("Rohtak");
+        districtlist.add("Panipat");
+        districtlist.add("Karnal");
+        districtlist.add("Ambala");
+
+
+        List<String> schoollist = new ArrayList<String>();
+        schoollist.add("School");
+        schoollist.add("Dav Public School");
+        schoollist.add("St. Stephen School");
+        schoollist.add("Doon Public School");
+        schoollist.add("Delhi Public School");
+        schoollist.add("Bal Bharti School");
+        schoollist.add("Hardayal Public School");
+        schoollist.add("Vaish Public School");
+
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
@@ -68,9 +97,20 @@ public class Profile extends AppCompatActivity implements  AdapterView.OnItemSel
         // Drop down layout style - list view with radio button
         dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, districtlist);
+        // Drop down layout style - list view with radio button
+        dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, schoollist);
+        // Drop down layout style - list view with radio button
+        dataAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gender.setAdapter(dataAdapter);
         classname.setAdapter(dataAdapter2);
         language.setAdapter(dataAdapter3);
+        district.setAdapter(dataAdapter5);
+        school.setAdapter(dataAdapter4);
 
     }
 

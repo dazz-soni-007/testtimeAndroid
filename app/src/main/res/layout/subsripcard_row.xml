@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/subjectlay"
+        android:layout_width="@dimen/margin100"
+        android:layout_height="@dimen/margin120"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/margin5"
+        app:layout_constraintStart_toStartOf="parent"
+        card_view:cardElevation="@dimen/margin5"
+        app:cardCornerRadius="@dimen/margin5"
+        app:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin70"
+                android:id="@+id/textbg"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:gravity="center"
+                android:fontFamily="@font/montserratbold"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:background="@color/navyblue"
+                android:elevation="@dimen/margin5"
+                android:layout_gravity="center"
+              ></TextView>
+            <TextView
+                android:id="@+id/price_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin5"
+                android:text="$1.33"
+                android:textStyle="bold"
+                android:padding="@dimen/margin3"
+                android:textSize="15sp"
+                android:textColor="@color/navyblue"
+                android:fontFamily="@font/montserratbold"></TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fxn.BubbleTabBar;
+import com.google.android.gms.maps.model.Dash;
 import com.techconfer.quiz.Adapter.HomeSliderAdapter;
 import com.techconfer.quiz.Adapter.SubjectsListAdapter;
 import com.techconfer.quiz.Adapter.TestListAdapter;
@@ -37,12 +38,12 @@ import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
     ViewPager viewPager;
-    RecyclerView subjects_recycler,test_recycler;
-    ArrayList subjectslist = new ArrayList<>(Arrays.asList("Physics","Chemistry","Biology","Geography","Mathematics","English"));
-    ArrayList imageslist = new ArrayList<>(Arrays.asList(R.drawable.physics,R.drawable.chemistry,R.drawable.bio,R.drawable.geography,R.drawable.contentpage,R.drawable.english));
-    ArrayList testlist = new ArrayList<>(Arrays.asList("English Test","Math Test","Physics Test","Biology Test","Geography Test","Chemistry Test","Math Test","Physics Test","Biology Test","Geography Test","Chemistry Test"));
+    RecyclerView subjects_recycler, test_recycler;
+    ArrayList subjectslist = new ArrayList<>(Arrays.asList("Physics", "Chemistry", "Biology", "Geography", "Mathematics", "English"));
+    ArrayList imageslist = new ArrayList<>(Arrays.asList(R.drawable.physics, R.drawable.chemistry, R.drawable.bio, R.drawable.geography, R.drawable.contentpage, R.drawable.english));
+    ArrayList testlist = new ArrayList<>(Arrays.asList("English Test", "Math Test", "Physics Test", "Biology Test", "Geography Test", "Chemistry Test", "Math Test", "Physics Test", "Biology Test", "Geography Test", "Chemistry Test"));
     private DrawerLayout drawerLayout;
-    ImageView menuicon;
+    ImageView menuicon, filtericon;
     ListView listView;
 
     @Override
@@ -50,22 +51,28 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        menuicon=findViewById(R.id.menuicon);
-        listView=findViewById(R.id.navLV);
-        subjects_recycler=findViewById(R.id.subjects_recycler);
-        test_recycler=findViewById(R.id.test_recycler);
+        menuicon = findViewById(R.id.menuicon);
+        listView = findViewById(R.id.navLV);
+        subjects_recycler = findViewById(R.id.subjects_recycler);
+        test_recycler = findViewById(R.id.test_recycler);
+        filtericon = findViewById(R.id.filter);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         HomeSliderAdapter viewPagerAdapter = new HomeSliderAdapter(this);
         viewPager.setAdapter(viewPagerAdapter);
 
-        SubjectsListAdapter adapter = new SubjectsListAdapter(getApplicationContext(),subjectslist,imageslist);
+        SubjectsListAdapter adapter = new SubjectsListAdapter(getApplicationContext(), subjectslist, imageslist);
         subjects_recycler.setAdapter(adapter);
 
         test_recycler.addItemDecoration(new DividerItemDecoration(getApplicationContext(),
                 DividerItemDecoration.VERTICAL));
-        TestListAdapter adapter2 = new TestListAdapter(getApplicationContext(),testlist);
+        TestListAdapter adapter2 = new TestListAdapter(getApplicationContext(), testlist);
         test_recycler.setAdapter(adapter2);
 
+        filtericon.setOnClickListener(v -> {
+            FavSubjectBottomSheet bottomSheet = new FavSubjectBottomSheet();
+            bottomSheet.show(getSupportFragmentManager(),
+                    "ModalBottomSheet");
+        });
         menuicon.setOnClickListener(v -> {
 
             drawerLayout.openDrawer(GravityCompat.START);
@@ -86,12 +93,44 @@ public class Dashboard extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // Toast.makeText(getApplicationContext(), items.get(position).getName() + " Clicked", Toast.LENGTH_SHORT).show();
-                switch (position){
-                    case 1:
-                        startActivity(new Intent(Dashboard.this,Profile.class));
+                // Toast.makeText(getApplicationContext(), items.get(position).getName() + " Clicked", Toast.LENGTH_SHORT).show();
+                switch (position) {
+                    case 0:
+                        startActivity(new Intent(Dashboard.this, Dashboard.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+                    case 1:
+                        startActivity(new Intent(Dashboard.this, Profile.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 2:
+                        startActivity(new Intent(Dashboard.this, LeaderBoard.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 3:
+                        startActivity(new Intent(Dashboard.this,TestHistory.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 4:
+                        startActivity(new Intent(Dashboard.this, SubscriptionActivity.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 5:
+                        startActivity(new Intent(Dashboard.this, NotificationActivity.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 6:
+                        startActivity(new Intent(Dashboard.this, AboutUs.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 7:
+                        startActivity(new Intent(Dashboard.this, ContentPage.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                   /* case 8:
+                        startActivity(new Intent(Dashboard.this, ResultScreen.class));
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;*/
 
                 }
             }

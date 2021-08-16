@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardElevation="@dimen/margin5">
+
+        <RelativeLayout
+            android:id="@+id/mainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/margin10">
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin5"
+                android:fontFamily="@font/montserratbold"
+                android:text="01"
+                android:textColor="@color/navyblue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/margin40"
+                android:layout_height="@dimen/margin40"
+                android:src="@drawable/profilepics"
+                app:civ_border_width="@dimen/margin1"
+                android:elevation="@dimen/margin20"
+                app:civ_border_color="@color/civ_bordercolor"
+              android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/rank"
+                android:layout_marginLeft="@dimen/margin10"/>
+
+            <TextView
+                android:id="@+id/testname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toLeftOf="@+id/subjlay"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin10"
+                android:fontFamily="@font/montserratbold"
+                android:text="username"
+                android:textColor="@color/navyblue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/subjlay"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:layout_height="@dimen/margin25"
+                android:background="@drawable/button_bg">
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratbold"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="233pt"
+                    android:paddingLeft="@dimen/margin10"
+                    android:paddingRight="@dimen/margin10"
+                    android:textColor="@color/white"></TextView>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

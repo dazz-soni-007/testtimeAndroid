@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SubscriptionActivity">
+
+    <include
+        android:id="@+id/top_lay"
+        layout="@layout/toolbar_layout"></include>
+
+    <ImageView
+        android:id="@+id/subs_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin200"
+        android:layout_below="@+id/top_lay"
+        android:background="@drawable/subsc_bg">
+    </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="@dimen/margin3"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserratregular"
+        android:layout_alignBottom="@+id/subs_image"
+        android:gravity="end"
+        android:text="Gain access to all premium Templates"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/textrecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subs_image"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_margin="@dimen/margin20"></androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_recycler"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_margin="@dimen/margin20"
+        android:layout_below="@+id/textrecycler">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</RelativeLayout>

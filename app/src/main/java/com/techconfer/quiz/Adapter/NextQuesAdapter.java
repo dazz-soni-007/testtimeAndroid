@@ -35,6 +35,7 @@ public class NextQuesAdapter extends RecyclerView.Adapter<NextQuesAdapter.MyView
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.nextquestion_rowlayout, parent, false);
         // set the view's size, margins, paddings and layout parameters
         MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
+
         return vh;
     }
 
@@ -44,7 +45,7 @@ public class NextQuesAdapter extends RecyclerView.Adapter<NextQuesAdapter.MyView
         final OnSelected model = mModellist.get(position);
         // set the data in items
         holder.name.setText(model.getCount());
-        holder.ques_layout.setOnClickListener(new View.OnClickListener() {
+        holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // open another activity on item click

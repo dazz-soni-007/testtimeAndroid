@@ -20,6 +20,7 @@
     <color name="profile_gradi_endcolor">#144F78</color>
     <color name="home_gra_start">#02238E</color>
     <color name="home_gra_end">#4CB2C2</color>
+    <color name="transparent_blue">#60002245</color>
 
 
 </resources>

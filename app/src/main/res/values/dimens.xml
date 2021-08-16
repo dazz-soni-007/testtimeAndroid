@@ -34,4 +34,8 @@
     <dimen name="margin103">103dp</dimen>
     <dimen name="margin200">200dp</dimen>
     <dimen name="margin130">130dp</dimen>
+    <dimen name="margin250">250dp</dimen>
+    <dimen name="margin90">90dp</dimen>
+    <dimen name="margin120">120dp</dimen>
+    <dimen name="margin70">70dp</dimen>
 </resources>

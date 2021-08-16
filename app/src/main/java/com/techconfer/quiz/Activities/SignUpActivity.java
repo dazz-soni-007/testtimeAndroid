@@ -1,6 +1,7 @@
 package com.techconfer.quiz.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.List;
 public class SignUpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     Spinner gender,classname,school,district;
     Button signupbtn;
+    ConstraintLayout constraintLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         school=findViewById(R.id.schoolname);
         district=findViewById(R.id.district);
         signupbtn=findViewById(R.id.signupbtn);
+
+
 
         signupbtn.setOnClickListener(this);
         gender.setOnItemSelectedListener(this);
