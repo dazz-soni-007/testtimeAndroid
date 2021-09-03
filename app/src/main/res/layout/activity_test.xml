@@ -11,32 +11,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/toolbar_layout"
-            android:id="@+id/toolay">
+        <include
+            android:id="@+id/toolay"
+            layout="@layout/toolbar_layout"></include>
 
-        </include>
-
-        <com.dhruv.timerbutton.TimerButton
+        <!--<com.dhruv.timerbutton.TimerButton
             android:id="@+id/timer_button"
             android:layout_width="150dp"
             android:layout_height="35dp"
-            android:layout_marginTop="@dimen/margin15"
             android:layout_below="@+id/toolay"
+            android:layout_marginTop="@dimen/margin15"
             android:layout_toRightOf="@+id/DispName"
             android:elevation="@dimen/margin5"
             app:animationBackground="@color/skyblue"
             app:animationCompleteText="Time Up"
             app:buttonBackground="@drawable/timer_selector"
             app:textColor="@color/white"
-            app:textSize="13sp" />
+            app:textSize="13sp" />-->
 
         <TextView
-            android:id="@+id/DispName"
+            android:id="@+id/timer"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/toolay"
+            android:layout_marginTop="@dimen/margin15"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/margin20"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:padding="@dimen/margin3"
+            android:text="1:00:00"
+            android:gravity="center"
+            android:background="@drawable/button_bg"
+            ></TextView>
+
+
+        <TextView
+            android:id="@+id/question_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/timer"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/timer_button"
             android:layout_marginLeft="@dimen/margin20"
             android:layout_marginTop="@dimen/margin30"
             android:fontFamily="@font/montserratbold"
@@ -48,7 +64,7 @@
             android:id="@+id/tvque"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/DispName"
+            android:layout_below="@+id/question_count"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/margin20"

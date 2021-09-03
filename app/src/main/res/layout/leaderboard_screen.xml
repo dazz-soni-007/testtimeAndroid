@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_above="@+id/topics_recyclerview"
+        android:layout_gravity="center"
+        android:weightSum="3"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginRight="@dimen/margin10"
+        android:layout_marginBottom="@dimen/margin10"
+        android:background="@android:color/transparent"
+        android:elevation="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/secondlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margin10">
+
+            <TextView
+                android:id="@+id/rank2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:text="2"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image2"
+                android:layout_width="@dimen/margin80"
+                android:layout_height="@dimen/margin80"
+                android:layout_marginTop="@dimen/margin3"
+                android:src="@drawable/profilepics"/>
+
+            <TextView
+                android:id="@+id/name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin3"
+                android:fontFamily="@font/montserratbold"
+                android:text="Ross"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/points2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin3"
+                android:fontFamily="@font/montserratregular"
+                android:text="233pt"
+                android:textColor="@color/navyblue"
+                android:textSize="16sp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/firstlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margin10">
+
+            <TextView
+                android:id="@+id/rank1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:text="1"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image1"
+                android:layout_width="@dimen/margin100"
+                android:layout_height="@dimen/margin100"
+                android:layout_marginTop="@dimen/margin3"
+                android:src="@drawable/profilepics"/>
+
+            <TextView
+                android:id="@+id/name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin3"
+                android:fontFamily="@font/montserratbold"
+                android:text="Chandler"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/points1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin3"
+                android:fontFamily="@font/montserratregular"
+                android:text="250pt"
+                android:textColor="@color/navyblue"
+                android:textSize="16sp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirdlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/margin10">
+
+            <TextView
+                android:id="@+id/rank3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:text="3"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image3"
+                android:layout_width="@dimen/margin80"
+                android:layout_height="@dimen/margin80"
+                android:layout_marginTop="@dimen/margin3"
+                android:src="@drawable/profilepics" />
+
+            <TextView
+                android:id="@+id/name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin3"
+                android:fontFamily="@font/montserratbold"
+                android:text="Joe"
+                android:textColor="@color/navyblue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/points3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin3"
+                android:fontFamily="@font/montserratregular"
+                android:text="220pt"
+                android:textColor="@color/navyblue"
+                android:textSize="16sp"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topics_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_marginRight="@dimen/margin10"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>

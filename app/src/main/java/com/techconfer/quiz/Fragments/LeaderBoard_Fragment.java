@@ -36,7 +36,7 @@ public class LeaderBoard_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_leaderboard, container, false);
+        View view = inflater.inflate(R.layout.leaderboard_screen, container, false);
         initViews(view);
         return view;
     }

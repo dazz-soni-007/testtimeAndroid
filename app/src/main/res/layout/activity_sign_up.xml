@@ -102,6 +102,7 @@
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="6dp"
+                android:theme="@style/MySpinnerLook"
                 android:background="@drawable/selector_spinner" />
 
             <Spinner
@@ -109,12 +110,15 @@
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="6dp"
+                android:theme="@style/MySpinnerLook"
+                style="@style/MySpinnerLook"
                 android:background="@drawable/selector_spinner" />
 
             <Spinner
                 android:id="@+id/schoolname"
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
+                android:theme="@style/MySpinnerLook"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/selector_spinner" />
 
@@ -122,6 +126,7 @@
                 android:id="@+id/district"
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
+                android:theme="@style/MySpinnerLook"
                 android:layout_marginTop="6dp"
                 android:background="@drawable/selector_spinner" />
 

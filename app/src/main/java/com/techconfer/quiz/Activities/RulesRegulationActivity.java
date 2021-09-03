@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.techconfer.quiz.Adapter.AnswerSheet_Adapter;
 import com.techconfer.quiz.Adapter.RulesListAdapter;
@@ -23,20 +24,37 @@ public class RulesRegulationActivity extends AppCompatActivity {
     RulesListAdapter notificationAdapter;
     List<RulesListModel> notificationModelArrayList = new ArrayList<>();
     Button agree;
-
+    ImageView backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules_regulation);
-
         notifi_recyler = findViewById(R.id.ruleslist);
+       // backbtn=findViewById(R.id.backbtn);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Rules & Regulation");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         agree=findViewById(R.id.agree);
         agree.setOnClickListener(v -> {
 
             startActivity(new Intent(RulesRegulationActivity.this,TestActivity.class));
         });
 
+     /*   backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });*/
         RulesListModel notificationModel = new RulesListModel();
         notificationModel.setRuledescription("\u25CF The examination will comprise of Objective type Multiple Choice Questions (MCQs)");
         notificationModelArrayList.add(notificationModel);

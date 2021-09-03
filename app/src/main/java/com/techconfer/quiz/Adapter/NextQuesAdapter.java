@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techconfer.quiz.Model.OnSelected;
+import com.techconfer.quiz.Model.TestModel;
 import com.techconfer.quiz.OnCLickListener;
 import com.techconfer.quiz.R;
 
@@ -23,9 +24,11 @@ public class NextQuesAdapter extends RecyclerView.Adapter<NextQuesAdapter.MyView
     List<OnSelected> mModellist = new ArrayList<>();
     OnCLickListener onCLickListener;
 
-    public NextQuesAdapter(Context context, List<OnSelected> mModellist,OnCLickListener onCLickListener) {
+    ArrayList<TestModel> modelArrayList = new ArrayList<>();
+
+    public NextQuesAdapter(Context context, ArrayList<TestModel> mModellist,OnCLickListener onCLickListener) {
         this.context = context;
-        this.mModellist = mModellist;
+        this.modelArrayList = mModellist;
         this.onCLickListener=onCLickListener;
     }
 
@@ -42,9 +45,12 @@ public class NextQuesAdapter extends RecyclerView.Adapter<NextQuesAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        final OnSelected model = mModellist.get(position);
+       // final OnSelected model = mModellist.get(position);
+        final TestModel testModel=modelArrayList.get(position);
         // set the data in items
-        holder.name.setText(model.getCount());
+
+
+        holder.name.setText(testModel.getCount());
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,13 +61,16 @@ public class NextQuesAdapter extends RecyclerView.Adapter<NextQuesAdapter.MyView
                 onCLickListener.onClick(position);
 
 
-                mModellist.get(position).setSelected(true);
+                modelArrayList.get(position).setSelected(true);
                 notifyDataSetChanged();
+
+                onCLickListener.onClick(position);
 
             }
         });
 
-        if(mModellist.get(position).isSelected){
+
+        if(modelArrayList.get(position).isSelected){
             holder.name.setBackgroundResource(R.drawable.active_dot);
             holder.name.setTextColor(context.getResources().getColor(R.color.white));
         }
@@ -75,15 +84,15 @@ public class NextQuesAdapter extends RecyclerView.Adapter<NextQuesAdapter.MyView
 
     public void reselectAll() {
 
-        for (int i = 0; i < mModellist.size(); i++) {
-            mModellist.get(i).setSelected(false);
-
+        for (int i = 0; i < modelArrayList.size(); i++) {
+            modelArrayList.get(i).setSelected(false);
         }
     }
 
     @Override
     public int getItemCount() {
-        return mModellist.size();
+        return modelArrayList.size();
+
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

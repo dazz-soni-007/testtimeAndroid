@@ -13,12 +13,16 @@
         android:layout_height="match_parent"
         tools:context=".Activities.Profile">
 
+        <include
+            android:id="@+id/top_lay"
+            layout="@layout/toolbar_layout"></include>
+
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_image"
             android:layout_width="@dimen/margin100"
             android:layout_height="@dimen/margin100"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin60"
             android:elevation="@dimen/margin20"
             android:src="@drawable/profilepics"
             app:civ_border_color="@color/civ_bordercolor"
@@ -31,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin10"
-            android:layout_marginTop="@dimen/margin80"
+            android:layout_marginTop="@dimen/margin120"
             android:layout_marginRight="@dimen/margin10"
             android:layout_marginBottom="@dimen/margin20"
             android:background="@drawable/profile_card_layout"
@@ -252,28 +256,32 @@
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="@dimen/margin6"
-                android:background="@drawable/selector_spinner" />
+                android:theme="@style/MySpinnerLook"
+                android:background="@drawable/bg_spinner" />
 
             <Spinner
                 android:id="@+id/classname"
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="@dimen/margin6"
-                android:background="@drawable/selector_spinner" />
+                android:theme="@style/MySpinnerLook"
+                android:background="@drawable/bg_spinner" />
 
             <Spinner
                 android:id="@+id/schoolname"
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="6dp"
-                android:background="@drawable/selector_spinner" />
+                android:theme="@style/MySpinnerLook"
+                android:background="@drawable/bg_spinner" />
 
             <Spinner
                 android:id="@+id/district"
                 android:layout_width="@dimen/margin300"
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="6dp"
-                android:background="@drawable/selector_spinner" />
+                android:theme="@style/MySpinnerLook"
+                android:background="@drawable/bg_spinner" />
 
             <Spinner
                 android:id="@+id/gender"
@@ -281,7 +289,8 @@
                 android:layout_height="@dimen/margin50"
                 android:layout_marginTop="@dimen/margin6"
                 android:layout_marginBottom="@dimen/margin20"
-                android:background="@drawable/selector_spinner" />
+                android:theme="@style/MySpinnerLook"
+                android:background="@drawable/bg_spinner" />
         </LinearLayout>
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

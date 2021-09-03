@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -13,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techconfer.quiz.Activities.Chapters_Activity;
+import com.techconfer.quiz.OnCLickListener;
 import com.techconfer.quiz.R;
 
 import java.util.ArrayList;
@@ -45,42 +47,23 @@ public class SubsCardAdapter extends RecyclerView.Adapter<SubsCardAdapter.MyView
     @Override
     public void onBindViewHolder(SubsCardAdapter.MyViewHolder holder, int position) {
 
-      /*  if(clickedPosition == position) {
-            holder.subjectlayout.setBackgroundResource(R.drawable.gradient_bg);
-            holder.name.setTextColor(Color.WHITE);
-            holder.image.setColorFilter(holder.image.getContext().getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
-
-        } else {
-            holder.subjectlayout.setCardBackgroundColor(Color.WHITE);
-            holder.name.setTextColor(context.getResources().getColor(R.color.navyblue));
-            holder.image.setColorFilter(holder.image.getContext().getResources().getColor(R.color.navyblue), PorterDuff.Mode.SRC_ATOP);
-
-        }*/
 
         // set the data in items
         holder.name.setText((CharSequence) personNames.get(position));
-        holder.bg.setBackgroundResource((Integer) personImages.get(position));
-        holder.bg.setText((CharSequence) price.get(position));
+      //     holder.bg.setBackgroundResource((Integer) personImages.get(position));
+
         // implement setOnClickListener event on item view.
-        holder.subjectlayout.setOnClickListener(v -> {
-
-          /*  if(clickedPosition==position){
-                clickedPosition=-1;
-                notifyDataSetChanged();
-                return;
-            }
-            clickedPosition = position;
-            notifyDataSetChanged();*/
-
-          /*  holder.subjectlayout.setBackgroundResource(R.drawable.gradient_bg);
-            holder.name.setTextColor(Color.WHITE);
-            holder.image.setColorFilter(holder.image.getContext().getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);*/
-
+        holder.mainlay.setOnClickListener(v -> {
+            isSelected=true;
+            holder.name.setVisibility(View.VISIBLE);
+            holder.bg.setBackgroundResource((Integer) personImages.get(position));
+            holder.bg.setText((CharSequence) price.get(position));
         });
 
 
-    }
 
+
+    }
 
     @Override
     public int getItemCount() {
@@ -91,7 +74,7 @@ public class SubsCardAdapter extends RecyclerView.Adapter<SubsCardAdapter.MyView
         // init the item view's
         TextView name,bg;
         ImageView image;
-        ConstraintLayout mainlay;
+        LinearLayout mainlay;
         CardView subjectlayout;
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -99,6 +82,7 @@ public class SubsCardAdapter extends RecyclerView.Adapter<SubsCardAdapter.MyView
             name = (TextView) itemView.findViewById(R.id.price_range);
             bg=(TextView)itemView.findViewById(R.id.textbg);
             subjectlayout=(CardView) itemView.findViewById(R.id.subjectlay);
+            mainlay=(LinearLayout)itemView.findViewById(R.id.cardlinear);
         }
     }
 }

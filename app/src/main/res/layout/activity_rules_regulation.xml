@@ -7,13 +7,27 @@
     android:background="@drawable/profile_bg"
     tools:context=".Activities.RulesRegulationActivity">
 
+    <include
+        android:id="@+id/top_lay"
+        layout="@layout/toolbar_layout"></include>
+
+   <!-- <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_effect"
+        android:layout_margin="@dimen/margin20"
+        android:src="@drawable/back_btn"></ImageView>-->
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/top_lay"
+        android:layout_marginTop="@dimen/margin50"
         android:layout_marginLeft="@dimen/margin10"
-        android:layout_marginTop="60dp"
         android:layout_marginRight="@dimen/margin10"
-        android:layout_marginBottom="@dimen/margin60"
+        android:layout_marginBottom="@dimen/margin50"
         app:cardCornerRadius="@dimen/margin20">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +38,7 @@
                 android:id="@+id/subjlay"
                 android:layout_width="250dp"
                 android:layout_height="@dimen/margin40"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/box_ripple"
                 android:gravity="center"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -36,14 +50,14 @@
                     android:fontFamily="@font/montserratbold"
                     android:textSize="18sp"
                     android:text="Subject -"
-                    android:textColor="@color/white"></TextView>
+                    android:textColor="@color/navyblue"></TextView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserratbold"
                     android:textSize="18sp"
                     android:text="Physics"
-                    android:textColor="@color/white"></TextView>
+                    android:textColor="@color/navyblue"></TextView>
 
             </LinearLayout>
 
@@ -53,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserratbold"
                 android:textSize="18sp"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/margin30"
                 app:layout_constraintTop_toBottomOf="@+id/subjlay"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +79,9 @@
                 android:id="@+id/viewline"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin1"
-                android:layout_margin="@dimen/margin5"
+                android:layout_marginLeft="@dimen/margin5"
+                android:layout_marginRight="@dimen/margin5"
+                android:layout_marginTop="@dimen/margin30"
                 app:layout_constraintTop_toBottomOf="@+id/rulestxt"
                 android:background="@color/grey"></View>
 
@@ -72,9 +89,11 @@
                 android:id="@+id/ruleslist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin30"
+                android:layout_marginLeft="@dimen/margin25"
+                android:layout_marginRight="@dimen/margin10"
                 app:layout_constraintTop_toBottomOf="@+id/viewline"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:layout_margin="@dimen/margin5"></androidx.recyclerview.widget.RecyclerView>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
 
             <Button
                 android:id="@+id/agree"
@@ -83,13 +102,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/ruleslist"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin30"
                 android:text="Agree"
                 android:fontFamily="@font/montserratbold"
-                android:textColor="@color/white"
+                android:textColor="@color/navyblue"
                 android:textAllCaps="false"
                 android:textSize="18sp"
-                android:background="@drawable/ripple_effect"></Button>
+                android:background="@drawable/box_ripple"></Button>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

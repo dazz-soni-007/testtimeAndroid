@@ -111,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         dataAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
-        gender.setAdapter(dataAdapter);
+         gender.setAdapter(dataAdapter);
         classname.setAdapter(dataAdapter2);
         district.setAdapter(dataAdapter3);
         school.setAdapter(dataAdapter4);

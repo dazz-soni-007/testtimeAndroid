@@ -4,11 +4,31 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_margin="@dimen/margin3"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="90dp">
+
+    <TextView
+        android:id="@+id/rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/margin5"
+        android:layout_marginStart="@dimen/margin10"
+        android:fontFamily="@font/montserratbold"
+        android:text="01"
+        android:textColor="@color/navyblue"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/margin80"
+        android:elevation="30dp"
+        app:cardCornerRadius="@dimen/margin40"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/margin10"
+        android:layout_marginLeft="@dimen/margin10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         card_view:cardElevation="@dimen/margin5">
@@ -20,30 +40,15 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="@dimen/margin10">
-            <TextView
-                android:id="@+id/rank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/margin5"
-                android:fontFamily="@font/montserratbold"
-                android:text="01"
-                android:textColor="@color/navyblue"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
-                android:layout_width="@dimen/margin40"
-                android:layout_height="@dimen/margin40"
-                android:src="@drawable/profilepics"
-                app:civ_border_width="@dimen/margin1"
-                android:elevation="@dimen/margin20"
-                app:civ_border_color="@color/civ_bordercolor"
-              android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/rank"
+                android:layout_width="@dimen/margin80"
+                android:layout_height="@dimen/margin80"
+                android:src="@drawable/profiledp"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/margin10"/>
 
             <TextView
@@ -51,35 +56,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/profile_image"
-                android:layout_toLeftOf="@+id/subjlay"
+                android:layout_toLeftOf="@+id/points"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin3"
                 android:fontFamily="@font/montserratbold"
                 android:text="username"
                 android:textColor="@color/navyblue"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/subjlay"
-                android:layout_width="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:gravity="center"
-                android:layout_height="@dimen/margin25"
-                android:background="@drawable/button_bg">
                 <TextView
                     android:id="@+id/points"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserratbold"
-                    android:textSize="14sp"
-                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="16sp"
+                    android:layout_marginRight="@dimen/margin20"
                     android:text="233pt"
-                    android:paddingLeft="@dimen/margin10"
-                    android:paddingRight="@dimen/margin10"
-                    android:textColor="@color/white"></TextView>
+                    android:textColor="@color/navyblue"></TextView>
 
-            </LinearLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

@@ -1,11 +1,13 @@
 package com.techconfer.quiz.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.techconfer.quiz.R;
@@ -15,6 +17,7 @@ import java.util.List;
 
 public class Profile extends AppCompatActivity implements  AdapterView.OnItemSelectedListener, View.OnClickListener{
     Spinner gender,classname,language,school,district;
+    ImageView backbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,17 @@ public class Profile extends AppCompatActivity implements  AdapterView.OnItemSel
         district=findViewById(R.id.district);
         classname=findViewById(R.id.classname);
         language=findViewById(R.id.language);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Profile");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         gender.setOnItemSelectedListener(this);
         classname.setOnItemSelectedListener(this);

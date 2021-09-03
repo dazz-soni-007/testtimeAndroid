@@ -1,51 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="@dimen/margin1"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools">
+    android:padding="@dimen/margin1">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/subjectlay"
         android:layout_width="@dimen/margin100"
         android:layout_height="@dimen/margin120"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="@dimen/margin5"
-        app:layout_constraintStart_toStartOf="parent"
-        card_view:cardElevation="@dimen/margin5"
+        android:background="@drawable/box_ripple"
         app:cardCornerRadius="@dimen/margin5"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        card_view:cardElevation="@dimen/margin5">
+
         <LinearLayout
+            android:id="@+id/cardlinear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/radio_flat_selector"
             android:orientation="vertical">
+
             <TextView
+                android:id="@+id/textbg"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin70"
-                android:id="@+id/textbg"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:gravity="center"
-                android:fontFamily="@font/montserratbold"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:background="@color/navyblue"
-                android:elevation="@dimen/margin5"
                 android:layout_gravity="center"
-              ></TextView>
+                android:adjustViewBounds="true"
+                android:elevation="@dimen/margin5"
+                android:fontFamily="@font/montserratbold"
+                android:gravity="center"
+                android:scaleType="fitXY"
+                android:text="See Offer"
+                android:background="@color/home_gra_end"
+                android:textColor="@color/white"
+                android:textSize="14sp"></TextView>
+
             <TextView
                 android:id="@+id/price_range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin5"
-                android:text="$1.33"
-                android:textStyle="bold"
+                android:fontFamily="@font/montserratbold"
                 android:padding="@dimen/margin3"
-                android:textSize="15sp"
                 android:textColor="@color/navyblue"
-                android:fontFamily="@font/montserratbold"></TextView>
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:visibility="gone"></TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

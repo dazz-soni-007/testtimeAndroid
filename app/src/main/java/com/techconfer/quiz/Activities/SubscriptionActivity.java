@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SubscriptionActivity extends AppCompatActivity {
-    ArrayList pricelist = new ArrayList<>(Arrays.asList("$1.99","$9.99","$18.99"));
+    ArrayList pricelist = new ArrayList<>(Arrays.asList("$1000","$2000","$5000"));
     ArrayList bglist = new ArrayList<>(Arrays.asList(R.drawable.gradient1,R.drawable.gradient3,R.drawable.gradient2));
     ArrayList pricerangelist = new ArrayList<>(Arrays.asList("1 Month","6 Months","1 Year"));
 
